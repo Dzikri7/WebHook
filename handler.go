@@ -30,7 +30,7 @@ func Post(w http.ResponseWriter, r *http.Request) {
 			dt := &wa.TextMessage{
 				To:       msg.Phone_number,
 				IsGroup:  false,
-				Messages: " Kamu pecinta sukabapak ya? " + msg.Alias_name,
+				Messages: "Halo " + msg.Alias_name + ", Kamu pecinta sukabapak ya?",
 			}
 			resp, _ = atapi.PostStructWithToken[atmessage.Response]("Token", os.Getenv("TOKEN"), dt, "https://api.wa.my.id/api/send/message/text")
 		}
